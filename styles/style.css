@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+}
+header{
+    width: 100%;
+    background: rgb(255, 128, 0);
+}
+.header_logo{
+    width: 150px;
+    margin: 10px;
+}
