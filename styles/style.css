@@ -9,3 +9,8 @@ header{
     width: 150px;
     margin: 10px;
 }
+.intro_pic{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
