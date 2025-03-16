@@ -14,3 +14,15 @@ header{
     height: 250px;
     object-fit: cover;
 }
+.content{
+    display: flex;
+}
+.restaurant{
+    flex: 1;
+}
+.register{
+    width: 300px;
+}
+h1{
+    text-align: center;
+}
