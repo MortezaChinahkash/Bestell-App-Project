@@ -1,4 +1,5 @@
 function renderDishes() {
+    getFromLocalStorage();
   for (let i = 0; i < 5; i++) {
     let priceRef = dishes[i].price.toFixed(2);
     let maincourseRef = document.getElementById("maincourseEntry");
@@ -27,20 +28,22 @@ function renderDishes() {
         </div>
         `;
   }
+
 }
 
-
 function printCart() {
+
     let cartEntry = document.getElementById("registerEntry");
     let totalPriceContainer = document.getElementById("totalPrice");
     let totalPrice = 0;
+    let totalWDelivery = totalPrice + 5; 
+    let isCartEmpty = true;
     cartEntry.innerHTML = "";
-
     for (let i = 0; i < dishes.length; i++) {
         if (dishes[i].amount > 0) {
+            isCartEmpty = false;
             let calculatedPrice = dishes[i].amount * dishes[i].price;
             totalPrice += calculatedPrice;
-
             cartEntry.innerHTML += /*html*/ `
             <h3 class="margin_lr">${dishes[i].name}</h3>
             <div class="price_amount margin_lr">
@@ -57,14 +60,19 @@ function printCart() {
             <hr>
             `;
         }
+        
     }
-    
-    let totalWDelivery = totalPrice + 5 
-    totalPriceContainer.innerHTML = `
-    <p>Zwischensumme: ${totalPrice.toFixed(2)}€</p>
-    <p>Lieferkosten: 5,00€ </p>
-    <p>Gesamt:${totalWDelivery.toFixed(2)}€</p>
-    `;
+
+    if (!isCartEmpty) {
+        totalPriceContainer.innerHTML = `
+        <p>Zwischensumme: ${totalPrice.toFixed(2)}€</p>
+        <p>Lieferkosten: 5,00€ </p>
+        <p>Gesamt: ${totalWDelivery.toFixed(2)}€</p>
+        `;
+    } else {
+        totalPriceContainer.innerHTML = "";
+    }
+    localStorage.setItem(`Check-Out`, JSON.stringify(dishes));
 }
 
 function removeOneDish(i) {
@@ -74,11 +82,15 @@ function removeOneDish(i) {
     }
     item.amount -= 1;
     printCart();
+    localStorage.setItem(`Check-Out`, JSON.stringify(dishes));
+
 }
 function deleteDishFromCart(i) {
         let item = dishes[i];
         item.amount = 0;
         printCart();
+        localStorage.setItem(`Check-Out`, JSON.stringify(dishes));
+
 }
 function addToCart(i) {
     let item = dishes[i];
@@ -87,4 +99,14 @@ function addToCart(i) {
     }
     item.amount += 1;
     printCart();
+    localStorage.setItem(`Check-Out`, JSON.stringify(dishes));
+
   }
+function getFromLocalStorage() {
+    let storedDishes = JSON.parse(localStorage.getItem("Check-Out")) || [];
+  
+  if (storedDishes.length > 0) {
+    dishes = storedDishes;
+  }
+  printCart();
+}  
