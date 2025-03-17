@@ -56,3 +56,13 @@ h1{
     font-weight: bold;
     color: gray;
 }
+.mid_pic{
+    width: calc(100% - 20px);
+    height: 150px;
+    margin: 10px;
+    object-fit: cover;
+}
+.margin_lr{
+    margin-left: 10px;
+    margin-right: 10px;
+}
