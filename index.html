@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./assets/Favicon/favicon.ico">
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/db.js"></script>
     <link rel="stylesheet" href="./styles/style.css">
     <title>Bestell-App/L‘Arte della Cucina</title>
 </head>
-<body>
+<body onload="renderDishes()">
 
     <header>
         <img class="header_logo" src="./assets/Logo/Bestell App- Logo.svg" alt="Bestell-App-Logo" >
@@ -31,14 +32,20 @@
                 </div>
                 <img class="mid_pic" src="./assets/JPG/mid.jpg">
                 <h3 class="margin_lr">Hauptgerichte</h3>
+                <div id="maincourseEntry">
+
+                </div>
+                <h3 class="margin_lr">Beilagen</h3>
+                <div id="sidecourseEntry">
+                    
+                </div>
             </div>
         </div>
         <div class="register">
             <h1>Warenkorb:</h1>
             <hr>
-
-
-
+            <div id="registerEntry">
+            </div>
         </div>
     </div>
 </body>

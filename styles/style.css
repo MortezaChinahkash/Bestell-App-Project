@@ -74,3 +74,33 @@ h1{
     max-width: 1440px;
     width: 100%;
 }
+.title_addbtn{
+    display: flex;
+    justify-content: space-between;
+}
+.add_button{
+    height: 25px;
+    width: 25px;
+    color: rgb(255, 128, 0);
+    background: white;
+    border: 0.5px solid black;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+
+
+}
+.dish_selection{
+    border: 0.1px solid rgb(139, 139, 139);
+    margin-bottom: 5px;
+}
+.dish_selection:hover{
+    background: rgb(254, 229, 203);
+}
+.dish_title{
+    margin-left: 10px;
+}
+.dish_price{
+    color: rgb(255, 128, 0) ;
+}
