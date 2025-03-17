@@ -105,3 +105,19 @@ h1{
 .dish_price{
     color: rgb(255, 128, 0) ;
 }
+.amount{
+    display: flex;
+    justify-content: space-around;
+}
+.price{
+    display: flex;
+
+}
+.price_amount{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+p{
+    margin: 0;
+}
