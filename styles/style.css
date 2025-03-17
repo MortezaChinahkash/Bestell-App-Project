@@ -121,3 +121,18 @@ h1{
 p{
     margin: 0;
 }
+.add_rmv_btn{
+    width: 25px;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.checkout_summary{
+    color: gray;
+    margin-left: 10px;
+}
+.checkout_summary_total{
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+}
