@@ -56,7 +56,7 @@ function printCart() {
         </div>
         <div class="price">
             <p>${calculatedPrice.toFixed(2)}€</p>
-            <button>DEL</button>
+            <button onclick="deleteDishFromCart(${i})">DEL</button>
         </div>
     </div>
       `;
@@ -72,4 +72,9 @@ function removeOneDish(i) {
     item.amount -= 1;
   
     printCart();
+}
+function deleteDishFromCart(i) {
+        let item = dishes[i];
+        item.amount = 0;
+        printCart();
 }
