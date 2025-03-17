@@ -28,38 +28,36 @@ let dishes = [
         "description": "Ofengegarter Wolfsbarsch mit mediterranem Gemüse, Zitronenbutter und einem Hauch von Meersalz.",
         "price": 32.90,
         "amount": 0  
+    },
+    {
+        "name": "Patate al Tartufo",
+        "description": "Knusprige Rosmarinkartoffeln mit schwarzem Trüffelöl, Parmesanspänen und Meersalz.",
+        "price": 12.90,
+        "amount": 0  
+    },
+    {
+        "name": "Carciofi alla Romana",
+        "description": "Zart geschmorte Artischocken mit Zitronen-Kräuter-Marinade und Pecorino.",
+        "price": 11.90,
+        "amount": 0  
+    },
+    {
+        "name": "Verdure Grigliate al Balsamico",
+        "description": "Gegrilltes mediterranes Gemüse mit Aceto Balsamico di Modena und frischem Basilikum.",
+        "price": 14.50,
+        "amount": 0 
+    },
+    {
+        "name": "Polenta al Parmigiano",
+        "description": "Cremige Polenta mit gereiftem Parmigiano Reggiano und gerösteten Pinienkernen.",
+        "price": 13.50,
+        "amount": 0  
+    },
+    {
+        "name": "Burrata con Pomodorini",
+        "description": "Frische Burrata mit bunten Kirschtomaten, Basilikum und nativem Olivenöl.",
+        "price": 15.90,
+        "amount": 0  
     }
-]
-let sidedishes = [
-        {
-            "name": "Patate al Tartufo",
-            "description": "Knusprige Rosmarinkartoffeln mit schwarzem Trüffelöl, Parmesanspänen und Meersalz.",
-            "price": 12.90,
-            "amount": 0  
-        },
-        {
-            "name": "Carciofi alla Romana",
-            "description": "Zart geschmorte Artischocken mit Zitronen-Kräuter-Marinade und Pecorino.",
-            "price": 11.90,
-            "amount": 0  
-        },
-        {
-            "name": "Verdure Grigliate al Balsamico",
-            "description": "Gegrilltes mediterranes Gemüse mit Aceto Balsamico di Modena und frischem Basilikum.",
-            "price": 14.50,
-            "amount": 0 
-        },
-        {
-            "name": "Polenta al Parmigiano",
-            "description": "Cremige Polenta mit gereiftem Parmigiano Reggiano und gerösteten Pinienkernen.",
-            "price": 13.50,
-            "amount": 0  
-        },
-        {
-            "name": "Burrata con Pomodorini",
-            "description": "Frische Burrata mit bunten Kirschtomaten, Basilikum und nativem Olivenöl.",
-            "price": 15.90,
-            "amount": 0  
-        }
 ]
 let checkout = []
