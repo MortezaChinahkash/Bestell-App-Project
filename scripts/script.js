@@ -1,5 +1,5 @@
 function renderDishes() {
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     let priceRef = dishes[i].price.toFixed(2);
     let maincourseRef = document.getElementById("maincourseEntry");
     maincourseRef.innerHTML += /*html*/ `
@@ -13,7 +13,7 @@ function renderDishes() {
         </div>
         `;
   }
-  for (let i = 5; i < 9; i++) {
+  for (let i = 5; i < 10; i++) {
     let priceRef = dishes[i].price.toFixed(2);
     let sidecourseRef = document.getElementById("sidecourseEntry");
     sidecourseRef.innerHTML += /*html*/ `
@@ -50,7 +50,7 @@ function printCart() {
     <h3 class="margin_lr">${dishes[i].name}</h3>
     <div class="price_amount margin_lr">
         <div class="amount">
-            <button>-</button>
+            <button onclick="removeOneDish(${i})">-</button>
             <p class="margin_lr">${dishes[i].amount}x</p>
             <button onclick="addToCart(${i})">+</button>
         </div>
@@ -62,4 +62,14 @@ function printCart() {
       `;
     }
   }
+}
+function removeOneDish(i) {
+    let item = dishes[i];
+
+    if (!item.amount) {
+      item.amount > 0;
+    }
+    item.amount -= 1;
+  
+    printCart();
 }
