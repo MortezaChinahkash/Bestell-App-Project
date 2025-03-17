@@ -43,3 +43,16 @@ h1{
 .rating{
     color:rgb(255, 128, 0) ;
 }
+.seperator{
+    display: flex;
+    align-items: center;
+    background: rgb(247, 246, 241);
+    gap: 10px;
+}
+.arrow{
+    width: 50px;
+}
+.dishes{
+    font-weight: bold;
+    color: gray;
+}
