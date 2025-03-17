@@ -28,49 +28,51 @@ function renderDishes() {
         `;
   }
 }
-function addToCart(i) {
-  let item = dishes[i];
 
-  if (!item.amount) {
-    item.amount = 0;
-  }
-  item.amount += 1;
-
-  printCart();
-}
 
 function printCart() {
-  let cartEntry = document.getElementById("registerEntry");
-  cartEntry.innerHTML = "";
+    let cartEntry = document.getElementById("registerEntry");
+    let totalPriceContainer = document.getElementById("totalPrice");
+    let totalPrice = 0;
+    cartEntry.innerHTML = "";
 
-  for (let i = 0; i < dishes.length; i++) {
-    if (dishes[i].amount > 0) {
-    let calculatedPrice = dishes[i].amount * dishes[i].price;
-    cartEntry.innerHTML += /*html*/ `
-    <h3 class="margin_lr">${dishes[i].name}</h3>
-    <div class="price_amount margin_lr">
-        <div class="amount">
-            <button onclick="removeOneDish(${i})">-</button>
-            <p class="margin_lr">${dishes[i].amount}x</p>
-            <button onclick="addToCart(${i})">+</button>
-        </div>
-        <div class="price">
-            <p>${calculatedPrice.toFixed(2)}€</p>
-            <button onclick="deleteDishFromCart(${i})">DEL</button>
-        </div>
-    </div>
-      `;
+    for (let i = 0; i < dishes.length; i++) {
+        if (dishes[i].amount > 0) {
+            let calculatedPrice = dishes[i].amount * dishes[i].price;
+            totalPrice += calculatedPrice;
+
+            cartEntry.innerHTML += /*html*/ `
+            <h3 class="margin_lr">${dishes[i].name}</h3>
+            <div class="price_amount margin_lr">
+                <div class="amount">
+                    <button onclick="removeOneDish(${i})">-</button>
+                    <p class="margin_lr">${dishes[i].amount}x</p>
+                    <button onclick="addToCart(${i})">+</button>
+                </div>
+                <div class="price">
+                    <p id="calculateTotal${i}">${calculatedPrice.toFixed(2)}</p><p>€</p>
+                    <button onclick="deleteDishFromCart(${i})">DEL</button>
+                </div>
+            </div>
+            <hr>
+            `;
+        }
     }
-  }
+    
+    let totalWDelivery = totalPrice + 5 
+    totalPriceContainer.innerHTML = `
+    <p>Zwischensumme: ${totalPrice.toFixed(2)}€</p>
+    <p>Lieferkosten: 5,00€ </p>
+    <p>Gesamt:${totalWDelivery.toFixed(2)}€</p>
+    `;
 }
+
 function removeOneDish(i) {
     let item = dishes[i];
-
     if (!item.amount) {
       item.amount > 0;
     }
     item.amount -= 1;
-  
     printCart();
 }
 function deleteDishFromCart(i) {
@@ -78,3 +80,11 @@ function deleteDishFromCart(i) {
         item.amount = 0;
         printCart();
 }
+function addToCart(i) {
+    let item = dishes[i];
+    if (!item.amount) {
+      item.amount = 0;
+    }
+    item.amount += 1;
+    printCart();
+  }
