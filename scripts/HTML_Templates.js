@@ -44,5 +44,8 @@ function totalSumHTMLTemplate(totalPriceReplace, totalWDeliveryReplace){
       <p class="checkout_summary">Zwischensumme: ${totalPriceReplace}€</p>
       <p class="checkout_summary">Lieferkosten: 5,00€ </p>
       <p class="checkout_summary_total">Gesamt: ${totalWDeliveryReplace}€</p>
+      <div class="flex">
+        <button id="placeOrder" class="order_button">Bestellen</button>
+    </div>
       `;
 }

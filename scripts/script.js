@@ -48,19 +48,23 @@ function printCart() {
       let totalPriceReplace = totalPriceString.replace(".",",")
       totalPriceContainer.innerHTML = totalSumHTMLTemplate(totalPriceReplace, totalWDeliveryReplace) 
     } else {
-      totalPriceContainer.innerHTML = "";
+    let placeOrderButton = document.getElementById("placeOrder");
+    if (placeOrderButton) {
+    placeOrderButton.classList.add("d_none");
+}
+      totalPriceContainer.innerHTML = /*html*/ `
+      <p class="margin_lr textalign"> Zurzeit befinden sich keine Artikel in Ihrem Warenkorb!</p>`;
     }
     localStorage.setItem(`Check-Out`, JSON.stringify(dishes));
   }
 
-function removeOneDish(i) {
+  function removeOneDish(i) {
     let item = dishes[i];
-    if (!item.amount) {
-      item.amount > 0;
+    if (item.amount > 0) {
+        item.amount -= 1;
     }
-    item.amount -= 1;
     printCart();
-    localStorage.setItem(`Check-Out`, JSON.stringify(dishes));
+    localStorage.setItem("Check-Out", JSON.stringify(dishes));
 }
 
 function deleteDishFromCart(i) {
