@@ -60,4 +60,3 @@ let dishes = [
         "amount": 0  
     }
 ]
-let checkout = []
