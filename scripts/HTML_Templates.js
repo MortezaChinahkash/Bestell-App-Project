@@ -69,3 +69,10 @@ function totalSumHTMLTemplate(totalPrices, totalWDelivery) {
     </div>
     `;
 }
+
+function printCartLogoPriceHTMLTemplate(totalWDelivery){
+return `
+  <p class="price_next_to_logo">${totalWDelivery}€</p>
+  <img onclick="openCloseRespMenu()" class="shopping_bag"src="./assets/PNG/shopping_bag_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png">
+  `
+}

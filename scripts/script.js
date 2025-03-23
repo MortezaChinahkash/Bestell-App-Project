@@ -59,10 +59,7 @@ function cartEmpty(totalPriceContainer, totalPrice, isCartEmpty) {
 
 function printCartLogoPrice(totalWDelivery, totalWDeliveryCalc){
   let logoPrice = document.getElementById("respMenuPrice")
-  logoPrice.innerHTML = /*html*/ `
-  <p class="price_next_to_logo">${totalWDelivery}€</p>
-  <img onclick="openCloseRespMenu()" class="shopping_bag"src="./assets/PNG/shopping_bag_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png">
-  `
+  logoPrice.innerHTML = printCartLogoPriceHTMLTemplate(totalWDelivery) 
   if (totalWDeliveryCalc == 5) {
     logoPrice.innerHTML = `
   <img onclick="openCloseRespMenu()" class="shopping_bag"src="./assets/PNG/shopping_bag_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png">
