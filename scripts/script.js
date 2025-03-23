@@ -38,7 +38,6 @@ function printCart() {
   cartEmpty(totalPriceContainer, totalPrice, isCartEmpty);
 }
 
-
 function cartEmpty(totalPriceContainer, totalPrice, isCartEmpty) {
   let totalWDeliveryCalc = totalPrice + 5;
   let totalWDelivery = totalWDeliveryCalc.toFixed(2).replace(".", ",");
@@ -78,6 +77,7 @@ function noItemsinCart(totalPriceContainer) {
   document.getElementById("respMenuCheckout").innerHTML = `
   <p class="margin_lr textalign"> Zurzeit befinden sich keine Artikel in Ihrem Warenkorb!</p>`;
 }
+
 function orderRecieved(){
 document.getElementById("overlayWindow").classList.remove("d_none")
 document.getElementById("resp_menu").classList.add("resp_menu_closed")
@@ -85,7 +85,7 @@ document.getElementById("overflowBehaviour").classList.add("scroll_behaviour")
 document.getElementById("overlayContent").innerHTML = `
 <img class="close_resp_menu overlay_close" onclick="closeOrderRecieved()" src="./assets/PNG/cancel_39dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png">
 <h1>Vielen Dank für Ihre Bestellung!</h1>
-<h2 class="order_placed_text">Ihre Bestellung wird schnellstmöglich zubereitet und geliefert</h2>`
+<h2 class="order_placed_text margin_lr">Ihre Bestellung wird schnellstmöglich zubereitet und geliefert</h2>`
 for (let i = 0; i < dishes.length; i++) {
   dishes[i].amount = 0
 }
@@ -96,7 +96,6 @@ localStorage.setItem(`Check-Out`, JSON.stringify(dishes));
 function closeOrderRecieved(){
   document.getElementById("overlayWindow").classList.add("d_none")
   document.getElementById("overflowBehaviour").classList.remove("scroll_behaviour")
-
 }
 
 function removeOneDish(i) {
