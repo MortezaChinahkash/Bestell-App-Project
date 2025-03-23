@@ -65,7 +65,7 @@ function totalSumHTMLTemplate(totalPrices, totalWDelivery) {
     <p class="checkout_summary">Lieferkosten: 5,00€ </p>
     <p class="checkout_summary_total">Gesamt: ${totalWDelivery}€</p>
     <div class="flex">
-        <button id="placeOrder" onclick="placeOrder()" class="order_button">Bestellen</button>
+        <button id="placeOrder" onclick="orderRecieved()" class="order_button">Bestellen</button>
     </div>
     `;
 }

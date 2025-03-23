@@ -55,15 +55,20 @@ function cartEmpty(totalPriceContainer, totalPrice, isCartEmpty) {
       noItemsinCart(totalPriceContainer);
       localStorage.setItem(`Check-Out`, JSON.stringify(dishes));
   }
-  printCartLogoPrice(totalWDelivery)
+  printCartLogoPrice(totalWDelivery, totalWDeliveryCalc)
 }
 
-function printCartLogoPrice(totalWDelivery){
+function printCartLogoPrice(totalWDelivery, totalWDeliveryCalc){
   let logoPrice = document.getElementById("respMenuPrice")
   logoPrice.innerHTML = /*html*/ `
   <p class="price_next_to_logo">${totalWDelivery}€</p>
   <img onclick="openCloseRespMenu()" class="shopping_bag"src="./assets/PNG/shopping_bag_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png">
   `
+  if (totalWDeliveryCalc == 5) {
+    logoPrice.innerHTML = `
+  <img onclick="openCloseRespMenu()" class="shopping_bag"src="./assets/PNG/shopping_bag_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png">
+  `
+  }
 }
 
 function noItemsinCart(totalPriceContainer) {
@@ -72,6 +77,26 @@ function noItemsinCart(totalPriceContainer) {
   totalPriceContainer.innerHTML = "";
   document.getElementById("respMenuCheckout").innerHTML = `
   <p class="margin_lr textalign"> Zurzeit befinden sich keine Artikel in Ihrem Warenkorb!</p>`;
+}
+function orderRecieved(){
+document.getElementById("overlayWindow").classList.remove("d_none")
+document.getElementById("resp_menu").classList.add("resp_menu_closed")
+document.getElementById("overflowBehaviour").classList.add("scroll_behaviour")
+document.getElementById("overlayContent").innerHTML = `
+<img class="close_resp_menu overlay_close" onclick="closeOrderRecieved()" src="./assets/PNG/cancel_39dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png">
+<h1>Vielen Dank für Ihre Bestellung!</h1>
+<h2 class="order_placed_text">Ihre Bestellung wird schnellstmöglich zubereitet und geliefert</h2>`
+for (let i = 0; i < dishes.length; i++) {
+  dishes[i].amount = 0
+}
+printCart()
+localStorage.setItem(`Check-Out`, JSON.stringify(dishes));
+}
+
+function closeOrderRecieved(){
+  document.getElementById("overlayWindow").classList.add("d_none")
+  document.getElementById("overflowBehaviour").classList.remove("scroll_behaviour")
+
 }
 
 function removeOneDish(i) {

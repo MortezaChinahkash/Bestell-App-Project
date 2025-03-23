@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./styles/style.css">
     <title>Bestell-App/L‘Arte della Cucina</title>
 </head>
-<body onload="renderDishes()">
+<body id="overflowBehaviour" onload="renderDishes()">
 
     <header>
         <img class="header_logo" src="./assets/Logo/BestellApp-Logo.svg" alt="Bestell-App-Logo" >
@@ -25,6 +25,11 @@
         <div id="respMenuCheckout"></div>
     </div>
     <div class="content">
+        <div class="overlay_outer_window">
+            <div id="overlayWindow" class="overlay d_none">
+                <div id="overlayContent"></div>
+            </div>
+        </div>
         <div class="restaurant">
             <div class="restaurant_header">
                 <div class="images">
@@ -42,12 +47,9 @@
                 <img class="mid_pic" src="./assets/JPG/mid.jpg">
                 <h3 class="margin_lr">Hauptgerichte</h3>
                 <div id="maincourseEntry">
-
                 </div>
                 <h3 class="margin_lr">Beilagen</h3>
-                <div id="sidecourseEntry">
-
-                </div>
+                <div id="sidecourseEntry"></div>
             </div>
         </div>
         <div>
