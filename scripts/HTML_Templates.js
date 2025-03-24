@@ -40,6 +40,7 @@ function printCartHTMLTemplate(i, calculatedPriceEnd) {
     </div>
     `;
 }
+
 function printCartToRespMenuHTMLTemplate(i, calculatedPriceEnd) {
     return `
     <button onclick="openCloseRespMenu()">Close Cart</button>
@@ -75,4 +76,11 @@ return `
   <p class="price_next_to_logo">${totalWDelivery}€</p>
   <img onclick="openCloseRespMenu()" class="shopping_bag"src="./assets/PNG/shopping_bag_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png">
   `
+}
+
+function orderRecievedHTMLTemplate(){
+    return `
+  <img class="close_resp_menu overlay_close" onclick="closeOrderRecieved()" src="./assets/PNG/cancel_39dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png">
+  <h1>Vielen Dank für Ihre Bestellung!</h1>
+  <h2 class="order_placed_text margin_lr">Ihre Bestellung wird schnellstmöglich zubereitet und geliefert</h2>`
 }

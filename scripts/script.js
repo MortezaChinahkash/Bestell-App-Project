@@ -76,14 +76,11 @@ function noItemsinCart(totalPriceContainer) {
 }
 
 function orderRecieved(){
-document.getElementById("overlayWindow").classList.remove("d_none")
-document.getElementById("resp_menu").classList.add("resp_menu_closed")
-document.getElementById("overflowBehaviour").classList.add("scroll_behaviour")
-document.getElementById("overlayContent").innerHTML = `
-<img class="close_resp_menu overlay_close" onclick="closeOrderRecieved()" src="./assets/PNG/cancel_39dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png">
-<h1>Vielen Dank für Ihre Bestellung!</h1>
-<h2 class="order_placed_text margin_lr">Ihre Bestellung wird schnellstmöglich zubereitet und geliefert</h2>`
-for (let i = 0; i < dishes.length; i++) {
+  document.getElementById("overlayWindow").classList.remove("d_none")
+  document.getElementById("resp_menu").classList.add("resp_menu_closed")
+  document.getElementById("overflowBehaviour").classList.add("scroll_behaviour")
+  document.getElementById("overlayContent").innerHTML = orderRecievedHTMLTemplate() 
+  for (let i = 0; i < dishes.length; i++) {
   dishes[i].amount = 0
 }
 printCart()
@@ -128,4 +125,9 @@ function getFromLocalStorage() {
   }
   printCart();
 }
+
+function openCloseRespMenu() {
+  document.getElementById("overflowBehaviour").classList.toggle("scroll_behaviour")
+  document.getElementById("resp_menu").classList.toggle("resp_menu_closed");
+  }
 

@@ -7,7 +7,6 @@
     <script src="./scripts/HTML_Templates.js"></script>
     <script src="./scripts/script.js"></script>
     <script src="./scripts/db.js"></script>
-    <script src="./scripts/resp_menu_cart.js"></script>
     <link rel="stylesheet" href="./styles/style.css">
     <title>Bestell-App/L‘Arte della Cucina</title>
 </head>
@@ -41,11 +40,11 @@
                 </div>
                 <div class="seperator">
                     <img class="arrow" src="./assets/PNG/play_arrow_50dp_FF8000_FILL0_wght400_GRAD0_opsz48.png">
-                    <a class="slider" href="#maincourseEntry">Hauptgänge</a>
+                    <a class="slider" href="#maincourse">Hauptgänge</a>
                     <a class="slider" href="#sidecourseEntry">Beilagen</a>
                 </div>
                 <img class="mid_pic" src="./assets/JPG/mid.jpg">
-                <h3 class="margin_lr">Hauptgerichte</h3>
+                <h3 id="maincourse" class="margin_lr">Hauptgerichte</h3>
                 <div id="maincourseEntry">
                 </div>
                 <h3 class="margin_lr">Beilagen</h3>
@@ -63,5 +62,8 @@
         </div>
         </div>
     </div>
+    <footer>
+        <img class="header_logo" src="./assets/Logo/BestellApp-Logo.svg" alt="Bestell-App-Logo" >
+    </footer>
 </body>
 </html>
